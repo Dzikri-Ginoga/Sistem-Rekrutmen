@@ -6,7 +6,10 @@ package Main;
 
 /**
  *
- * @author ACER
+ * Muhammad Dzikri Ginoga
+ * 123240237
+ * Prak. PBO IF-F
+ * 
  */
 public class Main {
     public static void main(String[] args) {
