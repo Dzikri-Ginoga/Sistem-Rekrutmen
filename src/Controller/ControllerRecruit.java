@@ -52,12 +52,11 @@ public class ControllerRecruit {
                return;
             }
             
-            // FIX: parse sebagai int (sesuai tipe di ModelRecruit)
+            
             int writing   = Integer.parseInt(halamanInput.getInputWriting());
             int coding    = Integer.parseInt(halamanInput.getInputCoding());
             int interview = Integer.parseInt(halamanInput.getInputInterview());
             
-            // FIX: gunakan default constructor + setter, lalu hitung score & status
             ModelRecruit recruit = new ModelRecruit();
             recruit.setNama(nama);
             recruit.setPath(path);
@@ -78,13 +77,11 @@ public class ControllerRecruit {
         }
     }
     
-    // 3. Method Pindah ke Halaman Edit (Dibutuhkan oleh ViewData)
     public void pindahKeEdit(int baris){
         ModelRecruit recruitYangDipilih = recruitList.get(baris);
         new EditData(recruitYangDipilih).setVisible(true);
     }
     
-    // 4. Method Update Data (Dibutuhkan oleh EditData)
     public void updateData(){
         try {
             String nama = halamanUpdate.getInputNama();
@@ -95,14 +92,12 @@ public class ControllerRecruit {
                 return;
             }
 
-            // FIX: parse sebagai int
             int writing   = Integer.parseInt(halamanUpdate.getInputWriting());
             int coding    = Integer.parseInt(halamanUpdate.getInputCoding());
             int interview = Integer.parseInt(halamanUpdate.getInputInterview());
 
-            // FIX: gunakan default constructor + setter, set id, hitung score & status
             ModelRecruit recruit = new ModelRecruit();
-            recruit.setId(halamanUpdate.getRecruitId()); // ambil id dari EditData
+            recruit.setId(halamanUpdate.getRecruitId()); 
             recruit.setNama(nama);
             recruit.setPath(path);
             recruit.setWriting(writing);

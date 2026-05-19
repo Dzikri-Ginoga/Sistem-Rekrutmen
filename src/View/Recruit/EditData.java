@@ -20,7 +20,7 @@ public class EditData extends JFrame{
     private JComboBox<String> cmbPath;
     private JButton btnUpdate, btnKembali;
     private ControllerRecruit controller;
-    private int recruitId; // FIX: simpan id recruit yang sedang diedit
+    private int recruitId; 
     
     public EditData(ModelRecruit recruit){
         this.recruitId = recruit.getId(); // FIX: simpan id
@@ -34,7 +34,6 @@ public class EditData extends JFrame{
         lblNama.setBounds(30, 30, 120, 25);
         add(lblNama);
 
-        // Nama diatur setEditable(false) jika dijadikan acuan key pencarian data unik di DB
         txNama = new JTextField(recruit.getNama());
         txNama.setBounds(170, 30, 200, 25);
         txNama.setEditable(false); 
@@ -101,7 +100,7 @@ public class EditData extends JFrame{
     }
 
     // Method Getter untuk mengirimkan teks perubahan ke Controller
-    public int getRecruitId() { return recruitId; } // FIX: getter id
+    public int getRecruitId() { return recruitId; }
     public String getInputNama() { return txNama.getText(); }
     public String getInputPath() { return cmbPath.getSelectedItem().toString(); }
     public String getInputWriting() { return txWriting.getText(); }
